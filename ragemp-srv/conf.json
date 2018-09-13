@@ -3,7 +3,7 @@
 	"name" : "Kaniggel Testserver", 
 	"gamemode" : "freeroam", 
 	"stream-distance" : 500.0,
-	"announce" : true,
-	"csharp" : "disabled",
+	"announce" : false,
+	"csharp" : "false",
 	"port": 22005
 } 
