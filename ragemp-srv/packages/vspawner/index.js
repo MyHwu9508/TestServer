@@ -30,7 +30,7 @@ mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
    color = parseInt(color);
     color2 = parseInt(color2);
     player.outputChatBox(`Color2 hat den Wert:, ${color2}.`);
-    if (color2=="undefined") {
+    if (color2=="NaN") {
     color2 = color;
     }
     let position = xyInFrontOfPos(player.position, player.heading, 5.0);
