@@ -38,5 +38,5 @@ mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
 
     var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, dimension: player.dimension});
     theVehicle.setColor(color,color2);
-    theVehicle.setNumberPlateText("Kaniggel");
+    theVehicle.setNumberPlateText('HWI');
 });
