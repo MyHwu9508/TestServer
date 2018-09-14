@@ -16,7 +16,6 @@ exports = {
       "wrench": "0x19044EE0",
       "battleaxe": "0xCD274149",
       "poolcue": "0x94117305",
-      "stone_hatchet": "0x3813FC08﻿"
       "pistol": "0x1B06D571",
       "pistol_mk2": "0xBFE256D4",
       "combatpistol": "0x5EF9FEC4",
@@ -31,7 +30,7 @@ exports = {
       "marksmanpistol": "0xDC4DB296",
       "revolver": "0xC1B3C3D1",
       "revolver_mk2": "0xCB96392F",
-      "doubleaction": "0x97EA20B8"
+      "doubleaction": "0x97EA20B8",
       "microsmg": "0x13532244",
       "smg": "0x2BE6766B",
       "smg_mk2": "0x78A97CD0",
@@ -47,7 +46,7 @@ exports = {
       "musket": "0xA89CB99E",
       "heavyshotgun": "0x3AABBBAA",
       "dbshotgun": "0xEF951FBB",
-      "autoshotgun": "0x12E82D3D"
+      "autoshotgun": "0x12E82D3D",
       "assaultrifle": "0xBFEFFF6D",
       "assaultrifle_mk2": "0x394F415C",
       "carbinerifle": "0x83BF0278",
@@ -57,16 +56,16 @@ exports = {
       "specialcarbine_mk2": "0x969C3D67",
       "bullpuprifle": "0x7F229F94",
       "bullpuprifle_mk2": "0x84D6FAFD",
-      "compactrifle": "0x624FE830"
+      "compactrifle": "0x624FE830",
       "mg": "0x9D07F764",
       "combatmg": "0x7FD62962",
       "combatmg_mk2": "0xDBBD7280",
-      "gusenberg": "0x61012683"
+      "gusenberg": "0x61012683",
       "sniperrifle": "0x5FC3C11",
       "heavysniper": "0xC472FE2",
       "heavysniper_mk2": "0xA914799",
       "marksmanrifle": "0xC734385A",
-      "marksmanrifle_mk2": "0x6A6C02E0"
+      "marksmanrifle_mk2": "0x6A6C02E0",
       "rpg": "0xB1CA77B1",
       "grenadelauncher": "0xA284510B",
       "grenadelauncher_smoke": "0x4DD2DC56",
@@ -74,7 +73,7 @@ exports = {
       "firework": "0x7F7497E5",
       "railgun": "0x6D544C99",
       "hominglauncher": "0x63AB0442",
-      "compactlauncher": "0x781FE4A"
+      "compactlauncher": "0x781FE4A",
       "grenade": "0x93E220BD",
       "bzgas": "0xA0973D5E",
       "smokegrenade": "0xFDBC8A50",
@@ -84,7 +83,7 @@ exports = {
       "proxmine": "0xAB564B93",
       "snowball": "0x787F0BB",
       "pipebomb": "0xBA45E8B8",
-      "ball": "0x23C9F95C"
+      "ball": "0x23C9F95C",
       "petrolcan": "0x34A67B97",
       "fireextinguisher": "0x60EC506",
       "parachute": "0xFBAB5776"
