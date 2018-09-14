@@ -454,5 +454,6 @@ exports = {
     ZENTORNO: 0xAC5DF515,
     ZION: 0xBD1B39C3,
     ZION2: 0xB8E2AE18,
-    ZTYPE: 0x2D3BD401
+    ZTYPE: 0x2D3BD401,
+    LADA: lada2107
 };
