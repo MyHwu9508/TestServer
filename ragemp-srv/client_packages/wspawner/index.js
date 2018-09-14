@@ -1,50 +1,38 @@
+
+const weapons = require("wspawner/weaponHashes");
 const NativeUI = require("nativeui");
 const Menu = NativeUI.Menu;
 const UIMenuItem = NativeUI.UIMenuItem;
+const UIMenuListItem = NativeUI.UIMenuListItem;
 const Point = NativeUI.Point;
+const ItemsCollection = NativeUI.ItemsCollection;
+const Color = NativeUI.Color;
+const ListItem = NativeUI.ListItem;
 
-const weapons = require("wspawner/weaponHashes");
-// main menu
-let mainMenu = new Menu("Weapon Spawner", "", new Point(950, 300));
-mainMenu.Visible = false;
-
-mainMenu.ItemSelect.on((item, index) => {
-    mainMenu.Visible = false;
-    curCategory = index;
-    categoryMenus[index].Visible = true;
-    transition = true;
+mp.gui.cursor.visible = false;
+mp.gui.chat.show(false);
+for (let i = 0; i < weapons.length; i++) {
+    const ui = new Menu("Test UI", "Test UI Subtitle", new Point(50, 50));
+ui.AddItem(new UIMenuListItem(
+	weapons[i],
+	"Weapon Name:",
+));
+}
+ui.ItemSelect.on(item => {
+	if (item instanceof UIMenuListItem) {
+		console.log(item.SelectedItem.DisplayText, item.SelectedItem.Data);
+	} else if (item instanceof UIMenuSliderItem) {
+		console.log(item.Text, item.Index, item.IndexToItem(item.Index));
+	} else {
+		console.log(item.Text);
+	}
 });
 
-let categoryMenus = [];
-let curCategory = -1;
-let transition = false;
+// ui.SliderChange.on((item, index, value) => {
+// 	console.log(item.Text, index, value);
+// });
 
-// categories
-for (let i = 0; i < weapons.length; i++) {
-    mainMenu.AddItem(new UIMenuItem(categoryTitles[i], ""));
-
-    let categoryMenu = new Menu(categoryTitles[i], "", new Point(950, 300));
-    categoryMenu.Visible = false;
-
-    categoryMenu.ItemSelect.on((item, index) => {
-        if (!transition) mp.events.callRemote("wspawner_Spawn", item.Text);
-        transition = false;
-    });
-
-    categoryMenu.MenuClose.on(() => {
-        curCategory = -1;
-        mainMenu.Visible = true;
-    });
-
-    categoryMenus.push(categoryMenu);
-}
-
-
-// f4 key - toggle menu visibility
 mp.keys.bind(0x71, false, () => {
-    if (curCategory > -1) {
-        categoryMenus[curCategory].Visible = !categoryMenus[curCategory].Visible;
-    } else {
-        mainMenu.Visible = !mainMenu.Visible;
-    }
+	if (ui.Visible) ui.Close();
+	else ui.Open();
 });
