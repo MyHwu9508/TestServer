@@ -36,6 +36,7 @@ mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
     let position = xyInFrontOfPos(player.position, player.heading, 5.0);
     var carHash = mp.joaat(car);
 
-    var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate: 'Kaniggel', dimension: player.dimension});
+    var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, dimension: player.dimension});
     theVehicle.setColor(color,color2);
+    theVehicle.setNumberPlateText("Kaniggel");
 });
