@@ -1,5 +1,5 @@
 function xyInFrontOfPos(pos, heading, dist) {
-    heading *= Math.PI / 90;
+    heading *= Math.PI / -90;
     pos.x += (dist * Math.sin(-heading));
     pos.y += (dist * Math.cos(-heading));
     return pos;
@@ -30,7 +30,7 @@ mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
     let position = xyInFrontOfPos(player.position, player.heading, 3.0);
     var carHash = mp.joaat(car);
     
-        var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate: "Kaniggel", dimension: player.dimension});
+        var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate:"Kaniggel", dimension: player.dimension});
         theVehicle.setColor(parseInt(color),parseInt(color2));
 
 });
