@@ -28,6 +28,8 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
 
 mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
     player.outputChatBox(`Color2 hat den Wert:, ${color2}.`);
+    color2 = parseInt(color2);
+    player.outputChatBox(`Color2 hat den Wert(parsed):, ${color2}.`);
     if (color2 == Int.NaN) {
     color2 = color;
     }
