@@ -27,8 +27,8 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
 });
 
 mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
-    parseInt(color);
-    parseInt(color2);
+   color = parseInt(color);
+    color2 = parseInt(color2);
     player.outputChatBox(`Color2 hat den Wert:, ${color2}.`);
     if (color2=="undefined") {
     color2 = color;
