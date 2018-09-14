@@ -1,5 +1,5 @@
 function xyInFrontOfPos(pos, heading, dist) {
-    heading *= Math.PI / -90;
+    heading *= Math.PI / 180;
     pos.x += (dist * Math.sin(-heading));
     pos.y += (dist * Math.cos(-heading));
     return pos;
@@ -14,7 +14,7 @@ mp.events.add("playerQuit", (player) => {
 });
 
 mp.events.add("vspawner_Spawn", (player, vehicle) => {
-    let position = xyInFrontOfPos(player.position, player.heading, 3.0);
+    let position = xyInFrontOfPos(player.position, player.heading, 5.0);
 
     if (player.vspawner_Vehicle) {
         player.vspawner_Vehicle.repair();
@@ -27,10 +27,10 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
 });
 
 mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
-    let position = xyInFrontOfPos(player.position, player.heading, 3.0);
+    let position = xyInFrontOfPos(player.position, player.heading, 5.0);
     var carHash = mp.joaat(car);
     
-        var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate:"Kaniggel", dimension: player.dimension});
+        var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate: "Kaniggel", dimension: player.dimension});
         theVehicle.setColor(parseInt(color),parseInt(color2));
 
 });
