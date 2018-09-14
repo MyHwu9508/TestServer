@@ -3,11 +3,11 @@ const Menu = NativeUI.Menu;
 const UIMenuItem = NativeUI.UIMenuItem;
 const Point = NativeUI.Point;
 
-//const weapons = require("wspawner/weaponHashes");
-const categoryTitles = ["melee", "handguns", "smg", "shotguns", "assault_rifles", "machine_guns", "sniper_rifles", "heavy_weapons", "throwables", "misc"];
+const vehicles = require("vspawner/vehicleHashes");
+const categoryTitles = ["Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-Road", "Industrial", "Utility", "Vans", "Cycles", "Boats", "Helicopters", "Planes", "Service", "Emergency", "Military", "Commercial", "Trains"];
 
 // main menu
-let mainMenu = new Menu("Weapon Spawner", "", new Point(950, 300));
+let mainMenu = new Menu("Vehicle Spawner", "", new Point(950, 300));
 mainMenu.Visible = false;
 
 mainMenu.ItemSelect.on((item, index) => {
@@ -29,7 +29,7 @@ for (let i = 0; i < categoryTitles.length; i++) {
     categoryMenu.Visible = false;
 
     categoryMenu.ItemSelect.on((item, index) => {
-        if (!transition) mp.events.callRemote("wspawner_Spawn", item.Text);
+        if (!transition) mp.events.callRemote("vspawner_Spawn", item.Text);
         transition = false;
     });
 
@@ -41,11 +41,19 @@ for (let i = 0; i < categoryTitles.length; i++) {
     categoryMenus.push(categoryMenu);
 }
 
-// weapons
-
+// vehicles
+for (let prop in vehicles) {
+    if (vehicles.hasOwnProperty(prop)) {
+        let vehicleClass = mp.game.vehicle.getVehicleClassFromName(vehicles[prop]);
+        let vehicleName = mp.game.ui.getLabelText(prop);
+        let vehicleItem = new UIMenuItem(prop, "");
+        vehicleItem.SetRightLabel(vehicleName == "NULL" ? "" : vehicleName);
+        categoryMenus[vehicleClass].AddItem(vehicleItem);
+    }
+}
 
 // f4 key - toggle menu visibility
-mp.keys.bind(0x71, false, () => {
+mp.keys.bind(0x73, false, () => {
     if (curCategory > -1) {
         categoryMenus[curCategory].Visible = !categoryMenus[curCategory].Visible;
     } else {

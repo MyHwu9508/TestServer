@@ -40,13 +40,6 @@ mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
     theVehicle.setColor(color,color2);
 });
 
-mp.events.addCommand('lada', (player) => {
-    mp.vehicles.new(mp.joaat("lada2107"), new mp.Vector3(-441.88, 1156.86, 326),
-    {
-
-        color: [[255,105,180],[255,105,180]]
-    });
-});
 
 mp.events.addCommand("lada", (player, fullText, color, color2) => {
     if (color2 == undefined) {

@@ -3,11 +3,9 @@ const Menu = NativeUI.Menu;
 const UIMenuItem = NativeUI.UIMenuItem;
 const Point = NativeUI.Point;
 
-const vehicles = require("vspawner/vehicleHashes");
-const categoryTitles = ["Compacts", "Sedans", "SUVs", "Coupes", "Muscle", "Sports Classics", "Sports", "Super", "Motorcycles", "Off-Road", "Industrial", "Utility", "Vans", "Cycles", "Boats", "Helicopters", "Planes", "Service", "Emergency", "Military", "Commercial", "Trains"];
-
+const weapons = require("vspawner/vehicleHashes");
 // main menu
-let mainMenu = new Menu("Vehicle Spawner", "", new Point(950, 300));
+let mainMenu = new Menu("Weapon Spawner", "", new Point(950, 300));
 mainMenu.Visible = false;
 
 mainMenu.ItemSelect.on((item, index) => {
@@ -22,14 +20,14 @@ let curCategory = -1;
 let transition = false;
 
 // categories
-for (let i = 0; i < categoryTitles.length; i++) {
+for (let i = 0; i < weapons.length; i++) {
     mainMenu.AddItem(new UIMenuItem(categoryTitles[i], ""));
 
     let categoryMenu = new Menu(categoryTitles[i], "", new Point(950, 300));
     categoryMenu.Visible = false;
 
     categoryMenu.ItemSelect.on((item, index) => {
-        if (!transition) mp.events.callRemote("vspawner_Spawn", item.Text);
+        if (!transition) mp.events.callRemote("wspawner_Spawn", item.Text);
         transition = false;
     });
 
@@ -41,19 +39,9 @@ for (let i = 0; i < categoryTitles.length; i++) {
     categoryMenus.push(categoryMenu);
 }
 
-// vehicles
-for (let prop in vehicles) {
-    if (vehicles.hasOwnProperty(prop)) {
-        let vehicleClass = mp.game.vehicle.getVehicleClassFromName(vehicles[prop]);
-        let vehicleName = mp.game.ui.getLabelText(prop);
-        let vehicleItem = new UIMenuItem(prop, "");
-        vehicleItem.SetRightLabel(vehicleName == "NULL" ? "" : vehicleName);
-        categoryMenus[vehicleClass].AddItem(vehicleItem);
-    }
-}
 
 // f4 key - toggle menu visibility
-mp.keys.bind(0x73, false, () => {
+mp.keys.bind(0x71, false, () => {
     if (curCategory > -1) {
         categoryMenus[curCategory].Visible = !categoryMenus[curCategory].Visible;
     } else {
