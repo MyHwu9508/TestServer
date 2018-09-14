@@ -21,10 +21,7 @@ mp.events.addCommand('veh', (player) => {
 mp.events.addCommand("veh", (player, fullText, car, color) => {
 	var carHash = mp.joaat(car);
     
-    mp.vehicles.new(mp.joaat(carHash), new mp.Vector3(-441.88, 1156.86, 326),
-    {
-
+        var theVehicle = mp.vehicles.new(mp.joaat(carHash), new mp.Vector3(-441.88, 1156.86, 326))
         theVehicle.setColor(parseInt(color),parseInt(color)); // set black colour
-    });
 
 });
