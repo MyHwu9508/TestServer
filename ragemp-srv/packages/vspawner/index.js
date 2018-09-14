@@ -1,5 +1,5 @@
 function xyInFrontOfPos(pos, heading, dist) {
-    heading *= Math.PI / 180;
+    heading *= Math.PI / 90;
     pos.x += (dist * Math.sin(-heading));
     pos.y += (dist * Math.cos(-heading));
     return pos;
