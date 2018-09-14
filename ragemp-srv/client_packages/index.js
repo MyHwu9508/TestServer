@@ -8,5 +8,3 @@ require('./CharPrev/cCharPrev.js');
 require('vspawner');
 // Init Nativeui
 require('nativeui');
-// Init Animations
-require('AnimPlayer/index.js');
