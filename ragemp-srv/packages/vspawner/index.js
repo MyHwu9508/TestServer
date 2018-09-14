@@ -28,17 +28,14 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
 
 mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
     player.outputChatBox(`Color2 hat den Wert:, ${color2}.`);
-    color2 = parseInt(color2);
-    player.outputChatBox(`Color2 hat den Wert(parsed):, ${color2}.`);
-    if (color2 == Int.NaN) {
-    color2 = color;
+    if (color2 == undefined) {
+        color2 = color;
     }
     color = parseInt(color);
     color2 = parseInt(color2);
     let position = xyInFrontOfPos(player.position, player.heading, 5.0);
     var carHash = mp.joaat(car);
-    
-        var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate: "Kaniggel", dimension: player.dimension});
-        theVehicle.setColor(color,color2);
 
+    var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate: "Kaniggel", dimension: player.dimension});
+    theVehicle.setColor(color,color2);
 });
