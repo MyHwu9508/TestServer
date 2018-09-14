@@ -3,7 +3,7 @@ const Menu = NativeUI.Menu;
 const UIMenuItem = NativeUI.UIMenuItem;
 const Point = NativeUI.Point;
 
-const weapons = require("vspawner/vehicleHashes");
+const weapons = require("wspawner/weaponHashes");
 // main menu
 let mainMenu = new Menu("Weapon Spawner", "", new Point(950, 300));
 mainMenu.Visible = false;
