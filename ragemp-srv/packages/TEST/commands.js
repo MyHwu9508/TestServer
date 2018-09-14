@@ -11,9 +11,8 @@ mp.events.addCommand('armor', (player) => {
 });
 
 mp.events.addCommand('veh', (player) => {
-    mp.vehicles.new(mp.joaat("turismor"), new mp.Vector3(-441.88, 1156.86, 326),
+    mp.vehicles.new(mp.joaat("lada2107"), new mp.Vector3(-441.88, 1156.86, 326),
     {
-        numberPlate: "ADMIN",
-        color: [[255,105,180],[255,105,180]]
+        color: [[0,0,0],[0,0,0]]
     });
 });
