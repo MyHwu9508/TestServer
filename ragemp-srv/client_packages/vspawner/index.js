@@ -3,7 +3,7 @@ const Menu = NativeUI.Menu;
 const UIMenuItem = NativeUI.UIMenuItem;
 const Point = NativeUI.Point;
 
-const vehicles = require("wspawner/weaponHashes");
+const weapons = require("wspawner/weaponHashes");
 const categoryTitles = ["melee", "handguns", "smg", "shotguns", "assault_rifles", "machine_guns", "sniper_rifles", "heavy_weapons", "throwables", "misc"];
 
 // main menu
