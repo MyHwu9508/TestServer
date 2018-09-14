@@ -18,15 +18,6 @@ ui.AddItem(new UIMenuListItem(
 	"Weapon Name:",
 ));
 }
-ui.ItemSelect.on(item => {
-	if (item instanceof UIMenuListItem) {
-		console.log(item.SelectedItem.DisplayText, item.SelectedItem.Data);
-	} else if (item instanceof UIMenuSliderItem) {
-		console.log(item.Text, item.Index, item.IndexToItem(item.Index));
-	} else {
-		console.log(item.Text);
-	}
-});
 
 // ui.SliderChange.on((item, index, value) => {
 // 	console.log(item.Text, index, value);
