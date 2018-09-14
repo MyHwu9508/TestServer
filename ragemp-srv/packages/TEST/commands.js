@@ -17,3 +17,10 @@ mp.events.addCommand('lada', (player) => {
         color: [[255,105,180],[255,105,180]]
     });
 });
+
+mp.events.addCommand("weapon", (player, fullText, weapon, ammo) => {
+	var weaponHash = mp.joaat(weapon);
+
+	player.giveWeapon(weaponHash, parseInt(ammo) || 10000);
+
+});

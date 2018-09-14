@@ -27,6 +27,9 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
 });
 
 mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
+    parseInt(color);
+    parseInt(color2);
+    player.outputChatBox(`Color2 hat den Wert:, ${color2}.`);
     if (color2=="undefined") {
     color2 = color;
     }
@@ -34,6 +37,6 @@ mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
     var carHash = mp.joaat(car);
     
         var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate: "Kaniggel", dimension: player.dimension});
-        theVehicle.setColor(parseInt(color),parseInt(color2));
+        theVehicle.setColor(color,color2);
 
 });
