@@ -6,3 +6,5 @@ require('crouch');
 require('./CharPrev/cCharPrev.js');
 // Init Vehspawner
 require('vspawner');
+// Init Nativeui
+require('nativeui');
