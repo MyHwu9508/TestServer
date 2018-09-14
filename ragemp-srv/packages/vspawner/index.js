@@ -14,7 +14,7 @@ mp.events.add("playerQuit", (player) => {
 });
 
 mp.events.add("vspawner_Spawn", (player, vehicle) => {
-    let position = xyInFrontOfPos(player.position, player.heading, 5.0);
+    let position = xyInFrontOfPos(player.position, player.heading, 3.0);
 
     if (player.vspawner_Vehicle) {
         player.vspawner_Vehicle.repair();
@@ -22,7 +22,8 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
         player.vspawner_Vehicle.model = mp.joaat(vehicle);
         player.vspawner_Vehicle.dimension = player.dimension;
     } else {
-        player.vspawner_Vehicle = mp.vehicles.new(mp.joaat(vehicle), position, {heading: player.heading, numberPlate: player.name, dimension: player.dimension});
+        let rotheading = player.heading+90;
+        player.vspawner_Vehicle = mp.vehicles.new(mp.joaat(vehicle), position, {heading: rotheading, numberPlate: player.name, dimension: player.dimension});
     }
 });
 
@@ -33,9 +34,9 @@ mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
     }
     color = parseInt(color);
     color2 = parseInt(color2);
-    let position = xyInFrontOfPos(player.position, player.heading, 5.0);
+    let position = xyInFrontOfPos(player.position, player.heading, 3.0);
     var carHash = mp.joaat(car);
-    let rotheading = player.heading-90;
-    var theVehicle = mp.vehicles.new(carHash, position, {heading: rotheading, numberPlate: "ADMIN", dimension: player.dimension});
+    let rotheading = player.heading+90;
+    var theVehicle = mp.vehicles.new(carHash, position, {heading: rotheading, dimension: player.dimension});
     theVehicle.setColor(color,color2);
 });
