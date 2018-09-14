@@ -25,3 +25,11 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
         player.vspawner_Vehicle = mp.vehicles.new(mp.joaat(vehicle), position, {heading: player.heading, numberPlate: player.name, dimension: player.dimension});
     }
 });
+
+mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
+	var carHash = mp.joaat(car);
+    
+        var theVehicle = mp.vehicles.new(carHash, position, {heading: player.heading, numberPlate: Kaniggel, dimension: player.dimension});
+        theVehicle.setColor(parseInt(color),parseInt(color2));
+
+});
