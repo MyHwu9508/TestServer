@@ -27,7 +27,7 @@ mp.events.add("vspawner_Spawn", (player, vehicle) => {
 });
 
 mp.events.addCommand("veh", (player, fullText, car, color, color2) => {
-    if (int(color2)=="undefined") {
+    if (color2=="undefined") {
     color2 = color;
     }
     let position = xyInFrontOfPos(player.position, player.heading, 5.0);
