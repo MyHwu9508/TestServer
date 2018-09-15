@@ -16,7 +16,7 @@ mp.events.addCommand('heal', (player) => {
 
 mp.events.addCommand('weapon', (player) => {
     for (let weaponName in weapons) {
-        console.log("Hash: " + (weapons[weaponName]));
-        player.giveWeapon((weapons[weaponName]), 1000);
+        console.log("Hash: " + mp.joaat(weaponName));
+        player.giveWeapon(mp.joaat(weaponName), 1000);
     }
 });
