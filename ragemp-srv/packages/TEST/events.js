@@ -11,6 +11,7 @@ mp.events.add('playerDeath', (player) => {
 });
 
 mp.events.add('playerJoin', (player) => {
+    player.spawn(spawnPoints[1]);
     player.setClothes(1, 98, 0, 2) //mask
     player.setClothes(4, 67, 6, 2) //Hose
     player.setClothes(6, 47, 6, 2) //Schuhe
