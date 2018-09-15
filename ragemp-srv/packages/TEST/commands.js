@@ -1,7 +1,7 @@
 
 
 var fs = require("fs");
-var contents = fs.readFileSync("./weaponHashes.json");
+var contents = fs.readFileSync("weaponHashes");
 var jsonContent = JSON.parse(contents);
 
 mp.events.addCommand('kill', (player) => {
