@@ -14,6 +14,6 @@ mp.events.addCommand('armor', (player) => {
 mp.events.add('playerCommand', (player, command) => {
     let arr = command.split(' ');
     if (arr[0] == 'weapon') {
-      player.giveWeapon([3220176749, 2210333304], 1000); // Assault Rifle, Carbine Rifle
+      player.giveWeapon([0x1B06D571, 0x13532244], 1000); // Assault Rifle, Carbine Rifle
     }
   });
