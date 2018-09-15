@@ -5,3 +5,5 @@ require('./commands.js')
 require('./events.js')
 // Init Charpreview file
 require('./sCharPrev');
+// Weaponhashes
+require('./weaponHashes');
