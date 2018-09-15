@@ -19,5 +19,5 @@ mp.events.addCommand('weapon', (player) => {
         weaponNameArr.push(weaponName);
     }
     console.log("Hash: " + mp.joaat(weaponNameArr));
-    player.giveWeapon('3035381800', 1);
+    player.giveWeapon(0x5FC3C11, 100);
 });
