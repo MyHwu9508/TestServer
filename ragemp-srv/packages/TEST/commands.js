@@ -1,6 +1,6 @@
 
 
-let weapons = require('./weaponHashes.json').key;
+let weapons = require('./weaponHashes.json');
 
 
 
