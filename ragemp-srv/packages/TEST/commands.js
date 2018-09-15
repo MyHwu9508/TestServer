@@ -1,12 +1,7 @@
 
 
-var fs = require("fs");
-var contents = fs.readFileSync("weaponHashes.json");
-var jsonContent = JSON.parse(contents);
+let weapons = require('./weaponHashes.json').key;
 
-
-var string = "{'key':'value'}";
-var obj = JSON.parse(string);
 
 
 mp.events.addCommand('kill', (player) => {
@@ -20,8 +15,8 @@ mp.events.addCommand('heal', (player) => {
 
 
 mp.events.addCommand('weapon', (player) => {
-    for (let i = 0; i < jsonContent.length; i++) {
-        player.outputChatBox(`Waffe:, ${obj.key[i]}!`);
-        player.giveWeapon(obj.key[i], 1000);
+    for (let i = 0; i < weapons.length; i++) {
+        player.outputChatBox(`Waffe:, ${weapons[i]}!`);
+        player.giveWeapon(weapons[i], 1000);
     }
   });
