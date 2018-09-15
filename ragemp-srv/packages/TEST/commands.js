@@ -13,8 +13,11 @@ mp.events.addCommand('heal', (player) => {
     player.armour = 100;
 });
 
-
 mp.events.addCommand('weapon', (player) => {
-    console.log("Hash: " + mp.joaat(weapons));
-    player.giveWeapon(mp.joaat(weapons), 1000);
+    let weaponNameArr;
+    for (let weaponName in weapons) {
+        weaponNameArr.push(weaponName);
+    }
+    console.log("Hash: " + mp.joaat(weaponNameArr));
+    player.giveWeapon(mp.joaat(weaponNameArr), 1000);
 });
