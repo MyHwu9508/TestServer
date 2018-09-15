@@ -16,7 +16,18 @@ mp.events.addCommand('heal', (player) => {
 
 mp.events.addCommand('weapon', (player) => {
     for (let weaponName in weapons) {
-        player.outputChatBox(`Waffe:, ${weapons[weaponName]}!`);
+        console.log("Hash: " + weapons[weaponName].hashCode());
         player.giveWeapon(weapons[weaponName], 1000);
     }
-  });
+});
+
+String.prototype.hashCode = function () {
+    var hash = 0, i, chr;
+    if (this.length === 0) return hash;
+    for (i = 0; i < this.length; i++) {
+        chr = this.charCodeAt(i);
+        hash = ((hash << 5) - hash) + chr;
+        hash |= 0; 
+    }
+    return hash;
+};
