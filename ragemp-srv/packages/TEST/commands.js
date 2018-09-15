@@ -10,9 +10,10 @@ mp.events.addCommand('armor', (player) => {
     player.armour = 100;
 });
 
-mp.events.addCommand("weapon", (player, fullText, weapon, ammo) => {
-	var weaponHash = mp.joaat(weapon);
 
-	player.giveWeapon(weaponHash, parseInt(ammo) || 10000);
-
-});
+mp.events.add('playerCommand', (player, command) => {
+    let arr = command.split(' ');
+    if (arr[0] == 'weapon') {
+      player.giveWeapon([3220176749, 2210333304], 1000); // Assault Rifle, Carbine Rifle
+    }
+  });
