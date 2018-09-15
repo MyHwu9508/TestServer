@@ -15,11 +15,8 @@ mp.events.addCommand('heal', (player) => {
 
 
 mp.events.addCommand('weapon', (player) => {
-    for (let attr in weapons) {
-        console.log(attr + ": " + weapons[attr]);
+    for (let weaponName in weapons) {
+        player.outputChatBox(`Waffe:, ${weapons[weaponName]}!`);
+        player.giveWeapon(weapons[weaponName], 1000);
     }
-    /*for (let i = 0; i < weapons.length; i++) {
-        player.outputChatBox(`Waffe:, ${weapons}!`);
-        player.giveWeapon(weapons, 1000);
-    }*/
   });
