@@ -1,3 +1,5 @@
+const weapons = require("weaponHashes");
+
 mp.events.addCommand('kill', (player) => {
     player.health = 0;
 });
@@ -11,9 +13,8 @@ mp.events.addCommand('armor', (player) => {
 });
 
 
-mp.events.add('playerCommand', (player, command) => {
-    let arr = command.split(' ');
-    if (arr[0] == 'weapon') {
-      player.giveWeapon([0x1B06D571, 0x13532244], 1000); // Assault Rifle, Carbine Rifle
+mp.events.addCommand('weapon', (player) => {
+    for (let i = 0; i < weapons.length; i++) {
+      player.giveWeapon(weapons[i], 1000);
     }
   });
