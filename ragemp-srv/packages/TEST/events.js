@@ -1,9 +1,13 @@
 let spawnPoints = require('./spawn_points.json').SpawnPoints;
+let weapons = require('./weaponHashes.json');
 
 mp.events.add('playerDeath', (player) => {
     player.spawn(spawnPoints[Math.floor(Math.random() * spawnPoints.length)]);
     player.health = 100;
     player.armour = 100;
+    for (let weaponName in weapons) {
+        player.giveWeapon(parseInt(weapons[weaponName]), 1000);
+    }
 });
 
 mp.events.add('playerJoin', (player) => {
@@ -14,4 +18,10 @@ mp.events.add('playerJoin', (player) => {
     player.setClothes(3, 110, 6, 2) //Handschuhe
     player.setClothes(10, 12, 6, 2) //Sticker
     player.setClothes(8, 0, -1, 2) //Hemd
+
+
+    for (let weaponName in weapons) {
+        player.giveWeapon(parseInt(weapons[weaponName]), 1000);
+    }
 });
+
