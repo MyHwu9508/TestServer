@@ -1,4 +1,4 @@
-exports = {
+{
       "dagger": "0x92A27487",
       "bat": "0x958A4A8F",
       "bottle": "0xF9E6AA4B",
@@ -87,4 +87,4 @@ exports = {
       "petrolcan": "0x34A67B97",
       "fireextinguisher": "0x60EC506",
       "parachute": "0xFBAB5776"
-    };
+}
