@@ -14,7 +14,7 @@ mp.events.addCommand('heal', (player) => {
 });
 
 mp.events.addCommand('weapon', (player) => {
-    let weaponNameArr;
+    let weaponNameArr = new Array();
     for (let weaponName in weapons) {
         weaponNameArr.push(weaponName);
     }
